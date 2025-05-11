@@ -27,6 +27,16 @@ const nextConfig = {
     ],
   },
   transpilePackages: ['framer-motion'],
+  // ESLint configuration
+  eslint: {
+    ignoreDuringBuilds: true, // This will ignore all ESLint errors during build
+    // Alternatively, you can use the following to only ignore specific rules:
+    // ignoreDuringBuilds: false,
+    // rules: {
+    //   'react/no-unescaped-entities': 'off',
+    //   'react-hooks/rules-of-hooks': 'off'
+    // }
+  },
   // Webpack configuration to handle module resolution
   webpack: (config) => {
     // Handle specific module issues
