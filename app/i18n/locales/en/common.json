@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "donate": "Donate",
+    "blog": "Blog"
+  },
+  "common": {
+    "readMore": "Read More",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success"
+  }
+} 
