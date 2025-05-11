@@ -39,8 +39,6 @@ export function TeamCarousel({
   className,
   showNavigation = true,
   showIndicators = true,
-  itemsToShow = 1,
-  layout = "grid",
 }: TeamCarouselProps) {
   const [isClient, setIsClient] = useState(false);
 

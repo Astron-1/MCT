@@ -7,7 +7,6 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Leaf, BookOpen, Droplets, Users } from "lucide-react";
 import { InitiativeCard } from "@/components/ui/initiative-card";
-import { InitiativeCardSkeleton } from "@/components/ui/initiative-card-skeleton";
 
 const initiatives = [
   {

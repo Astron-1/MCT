@@ -15,7 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, Heart } from "lucide-react";
 import { ModeToggle } from "@/components/theme-toggle";
 
 export function Header() {

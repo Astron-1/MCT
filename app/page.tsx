@@ -2,7 +2,6 @@ import { HeroSection } from "@/components/home/hero-section";
 import { MissionStatement } from "@/components/home/mission-statement";
 import { ImpactStats } from "@/components/home/impact-stats";
 import { KeyInitiatives } from "@/components/home/key-initiatives";
-import { LatestNews } from "@/components/home/latest-news";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { CtaSection } from "@/components/home/cta-section";
 import { LeadershipSection } from "@/components/home/leadership-section";

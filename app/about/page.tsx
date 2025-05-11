@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+// import { Card, CardContent } from "@/components/ui/card";
 import { TeamCarousel } from "@/components/team/team-carousel";
 import { ArrowRight, Award, Heart, Users, Target, Clock, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";

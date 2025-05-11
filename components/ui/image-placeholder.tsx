@@ -42,18 +42,18 @@ export function ImagePlaceholder({
   };
 
   // Animation variants for the icon
-  const iconVariants = {
-    initial: { scale: 0.8, opacity: 0.5 },
-    animate: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        repeatType: 'reverse',
-      },
-    },
-  };
+//   const iconVariants = {
+//     initial: { scale: 0.8, opacity: 0.5 },
+//     animate: {
+//       scale: 1,
+//       opacity: 1,
+//       transition: {
+//         duration: 2,
+//         repeat: Infinity,
+//         repeatType: 'reverse',
+//       },
+//     },
+//   };
 
   return (
     <div

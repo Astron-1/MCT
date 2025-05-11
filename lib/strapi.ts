@@ -23,8 +23,8 @@ export interface StrapiSingleResponse<T> {
 
 // Placeholder fetch functions until Strapi is configured
 export async function fetchFromStrapi<T>(
-  endpoint: string,
-  queryParams?: Record<string, any>
+  _endpoint: string,
+  _queryParams?: Record<string, any>
 ): Promise<StrapiResponse<T>> {
   // This is a placeholder implementation
   // Replace this with actual Strapi implementation when ready
@@ -44,7 +44,7 @@ export async function fetchFromStrapi<T>(
 }
 
 export async function fetchSingleFromStrapi<T>(
-  endpoint: string
+  _endpoint: string
 ): Promise<StrapiSingleResponse<T>> {
   // This is a placeholder implementation
   console.warn('Strapi is not configured yet. Using placeholder data.');

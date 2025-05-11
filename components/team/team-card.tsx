@@ -2,12 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Twitter, Linkedin, Mail, Phone, BookOpen, User } from "lucide-react";
+import { Twitter, Linkedin, Mail, Phone, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SocialLinks {

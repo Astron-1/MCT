@@ -171,18 +171,19 @@ export function GallerySection({
   }, [selectedCategory, images]);
 
   // Handle responsive columns and mobile detection
+   // @ts-ignore
   useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== 'undefined') {
-        const width = window.innerWidth;
-        setIsMobile(width < 768);
-        if (width < 768) {
-          setColumnCount(columns.sm);
-        } else if (width < 1200) {
-          setColumnCount(columns.md);
-        } else {
-          setColumnCount(columns.lg);
-        }
+    // @ts-ignore
+    const handleResize = (): void => {
+      if (typeof window === 'undefined') return;
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      if (width < 768) {
+        setColumnCount(columns.sm);
+      } else if (width < 1200) {
+        setColumnCount(columns.md);
+      } else {
+        setColumnCount(columns.lg);
       }
     };
 
@@ -206,7 +207,7 @@ export function GallerySection({
     });
 
     // Distribute images across columns while trying to maintain similar heights
-    sortedImages.forEach((image, index) => {
+    sortedImages.forEach((image, _index) => {
       const shortestColumn = columnArrays
         .map((col, i) => ({ 
           index: i, 

@@ -20,7 +20,7 @@ interface UseBlogPostsProps {
 }
 
 export function useBlogPosts({ postsPerPage = 6, initialPosts }: UseBlogPostsProps) {
-  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
+  const [posts] = useState<BlogPost[]>(initialPosts);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

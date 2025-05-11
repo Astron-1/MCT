@@ -91,8 +91,6 @@ export function BlogList() {
     setSearchQuery,
     hasMore,
     loadMore,
-    selectedCategory,
-    setSelectedCategory,
   } = useBlogPosts({
     initialPosts: blogPosts,
     postsPerPage: 4,
