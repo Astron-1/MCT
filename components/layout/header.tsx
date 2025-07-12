@@ -17,6 +17,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Heart } from "lucide-react";
 import { ModeToggle } from "@/components/theme-toggle";
+import Image from "next/image";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,8 +48,21 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Heart className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">Trust Org</span>
+            <div className="relative w-[40px] sm:w-[45px] md:w-[50px] h-[40px]">
+              <Image
+                src="/images/logo/logo.svg"
+                alt="MAA Charitable Trust Logo"
+                fill
+                className={cn(
+                  "transition-opacity duration-300 object-contain",
+                  isScrolled ? "opacity-100" : "opacity-100"
+                )}
+                priority
+              />
+            </div>
+            <span className="text-sm sm:text-base md:text-lg font-semibold">
+              Maa Charitable Trust
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -10,38 +10,20 @@ import { TeamCarousel } from "@/components/team/team-carousel";
 // Key team members data (founders and executives)
 const keyTeamMembers = [
   {
-    name: "Sarah Johnson",
-    role: "Executive Director & Founder",
-    image: "https://picsum.photos/seed/sarah/1200/800",
-    bio: "Sarah brings over 15 years of experience in nonprofit leadership and a passion for community development. As our founder, she has been instrumental in shaping our organization's vision and impact. Her dedication to community service and innovative approach to solving social challenges has helped us create lasting positive change.",
+    name: "Mr. Mayank Mohan Mishra",
+    role: "Managing Director & Chairman, MAA Charitable Trust",
+    image: "/images/team/mayank.jpg",
+    bio: `Mr. Mayank Mohan Mishra is a dynamic and visionary leader with over 15 years of diverse professional experience across industries. A postgraduate in Business Administration (MBA), he has consistently demonstrated a strong commitment to excellence, ethical leadership, and community development. Throughout his career, he has held key leadership roles where he successfully combined strategic thinking with a people-first approach, building high-impact teams and driving sustainable growth.
+
+As the Managing Director and Chairman of MAA Charitable Trust, Mr. Mishra plays a pivotal role in shaping the organization's vision, strategy, and social outreach programs. Under his stewardship, the Trust has grown into a respected institution dedicated to empowering underserved communities through initiatives in healthcare, education, skill development, and social welfare.
+
+His leadership style is marked by empathy, accountability, and innovation. He believes in creating long-term value by aligning organizational goals with the greater good of society. With a deep understanding of grassroots challenges and a strong belief in inclusive development, Mr. Mishra continues to inspire positive change through impactful projects and compassionate leadership.
+
+Driven by purpose and guided by principles, Mr. Mayank Mohan Mishra remains committed to building a better future for all, one initiative at a time.`,
     featured: true,
     socialLinks: {
-      twitter: "https://twitter.com/sarahjohnson",
-      linkedin: "https://linkedin.com/in/sarahjohnson",
-      email: "sarah@trustorg.com",
-      phone: "+1 (555) 123-4567",
-      blog: "/blog/team/sarah-johnson"
-    }
-  },
-  {
-    name: "Michael Chen",
-    role: "Program Director & Co-founder",
-    image: "https://picsum.photos/seed/michael/400",
-    bio: "Michael specializes in developing and implementing innovative community programs. His strategic vision has helped us reach and impact thousands of lives.",
-    socialLinks: {
-      linkedin: "https://linkedin.com/in/michaelchen",
-      email: "michael@trustorg.com",
-      phone: "+1 (555) 234-5678"
-    }
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Head of Community Relations",
-    image: "https://picsum.photos/seed/emily/400",
-    bio: "Emily is dedicated to building strong relationships with community partners and volunteers. Her work has been crucial in expanding our network.",
-    socialLinks: {
-      twitter: "https://twitter.com/emilyrodriguez",
-      email: "emily@trustorg.com"
+      email: "maa.edu16@gmail.com",
+      phone: "+91 7068869272"
     }
   }
 ];

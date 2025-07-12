@@ -10,18 +10,20 @@ import { HeroCarousel } from "./hero-carousel";
 const heroMedia = [
   {
     type: "image" as const,
-    src: "https://images.pexels.com/photos/6646914/pexels-photo-6646914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "People working together in a community project"
+    src: "/images/logo/logo.svg",
+    alt: "Maa Charitable Trust Logo"
   },
   {
-    type: "image" as const,
-    src: "https://images.pexels.com/photos/6994992/pexels-photo-6994992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "Community engagement and support"
+    type: "youtube" as const,
+    youtubeId: "zHA97tSJgng",
+    src: `https://img.youtube.com/vi/zHA97tSJgng/maxresdefault.jpg`,
+    alt: "MAA Charitable Trust Video 1"
   },
   {
-    type: "image" as const,
-    src: "https://images.pexels.com/photos/6646967/pexels-photo-6646967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "Sustainable community development"
+    type: "youtube" as const,
+    youtubeId: "J6O0uVuiAC4",
+    src: `https://img.youtube.com/vi/J6O0uVuiAC4/maxresdefault.jpg`,
+    alt: "MAA Charitable Trust Video 2"
   }
 ];
 

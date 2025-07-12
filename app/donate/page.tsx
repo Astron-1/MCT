@@ -5,8 +5,8 @@ import { DonationImpact } from "@/components/donate/donation-impact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Donate | Trust Organization",
-  description: "Support our mission and make a difference by donating to Trust Organization's initiatives and programs.",
+  title: "Donate | Maa Charitable Trust",
+  description: "Support our mission and make a difference by donating to Maa Charitable Trust's initiatives and programs.",
 };
 
 export default function DonatePage() {

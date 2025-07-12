@@ -32,7 +32,7 @@ const ImageSkeleton = ({ layout }: { layout: "landscape" | "portrait" }) => (
   <div 
     className={cn(
       "relative w-full bg-muted animate-pulse rounded-lg overflow-hidden",
-      layout === "portrait" ? "aspect-square" : "aspect-video md:aspect-[16/9]"
+      layout === "portrait" ? "aspect-square" : "aspect-[3/4] md:aspect-[3/4]"
     )}
   >
     <div className="absolute inset-0 flex items-center justify-center">
@@ -97,17 +97,17 @@ export function TeamCard({
   const cardContent = (
     <Card className={cn(
       "relative overflow-hidden border-none bg-gradient-to-br from-background to-muted shadow-lg transition-all duration-300 rounded-xl h-full",
-      "hover:shadow-xl",
+      "hover:shadow-xl group/card",
       className
     )}>
       <CardContent className={cn(
-        "p-6 flex flex-col",
-        layout === "landscape" && "md:flex-row md:gap-8 md:items-center"
+        "p-6 flex flex-col transition-all duration-300 ease-in-out",
+        layout === "landscape" && "md:flex-row md:gap-12 md:items-start"
       )}>
         {/* Image Section */}
         <div className={cn(
-          "relative mb-6",
-          layout === "portrait" ? "w-full" : "w-full md:w-1/2 md:mb-0"
+          "relative mb-6 flex-shrink-0",
+          layout === "portrait" ? "w-full" : "w-full md:w-2/5 md:mb-0"
         )}>
           {(!isComponentMounted || imageLoading) && !imageError && (
             <ImageSkeleton layout={layout} />
@@ -115,7 +115,7 @@ export function TeamCard({
           {isComponentMounted && !imageError && (
             <div className={cn(
               "relative rounded-lg overflow-hidden",
-              layout === "portrait" ? "aspect-square" : "aspect-video md:aspect-[16/9]",
+              layout === "portrait" ? "aspect-square" : "aspect-[3/4] md:aspect-[3/4]",
               imageLoading ? "hidden" : "block"
             )}>
               <Image
@@ -126,11 +126,11 @@ export function TeamCard({
                   "(max-width: 768px) 100vw, 400px" : 
                   "(max-width: 768px) 100vw, 800px"}
                 className={cn(
-                  "object-cover transition-all duration-500",
+                  "object-cover transition-all duration-500 object-top",
                   "hover:scale-105"
                 )}
                 priority={featured}
-                onLoadingComplete={() => setImageLoading(false)}
+                onLoad={() => setImageLoading(false)}
                 onError={() => {
                   setImageError(true);
                   setImageLoading(false);
@@ -152,24 +152,30 @@ export function TeamCard({
 
         {/* Content Section */}
         <div className={cn(
-          "flex flex-col",
-          layout === "portrait" ? "text-center" : "text-left md:w-1/2",
+          "flex flex-col transition-all duration-300 ease-in-out",
+          layout === "portrait" ? "text-center" : "text-left md:w-3/5",
           layout === "landscape" && "md:justify-between"
         )}>
-          <div>
+          <div className="space-y-3">
             <h3 className={cn(
-              "font-bold mb-1 group-hover:text-primary transition-colors duration-300",
+              "font-bold group-hover/card:text-primary transition-colors duration-300",
               layout === "landscape" ? "text-2xl md:text-3xl" : "text-xl"
             )}>
               {name}
             </h3>
-            <p className="text-sm text-muted-foreground mb-3">{role}</p>
-            <p className={cn(
-              "text-muted-foreground/90",
-              layout === "landscape" ? "text-base line-clamp-4" : "text-sm line-clamp-3"
-            )}>
-              {bio}
-            </p>
+            <p className="text-sm text-muted-foreground">{role}</p>
+            <div className="relative">
+              <div className={cn(
+                "text-muted-foreground/90 transition-all duration-300 space-y-4",
+                layout === "landscape" ? "text-base" : "text-sm",
+                "group-hover/card:line-clamp-none",
+                !layout || layout === "portrait" ? "line-clamp-3" : "line-clamp-4"
+              )}>
+                {bio.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="mt-4">

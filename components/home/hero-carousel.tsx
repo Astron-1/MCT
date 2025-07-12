@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Media {
-  type: "image" | "video";
+  type: "image" | "video" | "youtube";
   src: string;
   alt?: string;
+  youtubeId?: string;
 }
 
 interface HeroCarouselProps {
@@ -51,6 +52,10 @@ export function HeroCarousel({
     setCurrentIndex(index);
   };
 
+  const handleYouTubeClick = (youtubeId: string) => {
+    window.open(`https://www.youtube.com/watch?v=${youtubeId}`, '_blank');
+  };
+
   return (
     <div 
       className={cn(
@@ -61,7 +66,30 @@ export function HeroCarousel({
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
       <AnimatePresence mode="wait">
-        {media[currentIndex].type === "image" ? (
+        {media[currentIndex].type === "youtube" ? (
+          <motion.div
+            key={`youtube-${currentIndex}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full cursor-pointer group"
+            onClick={() => media[currentIndex].youtubeId && handleYouTubeClick(media[currentIndex].youtubeId!)}
+          >
+            <Image
+              src={`https://img.youtube.com/vi/${media[currentIndex].youtubeId}/maxresdefault.jpg`}
+              alt={media[currentIndex].alt || "YouTube thumbnail"}
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Play className="w-8 h-8 text-white fill-current" />
+              </div>
+            </div>
+          </motion.div>
+        ) : media[currentIndex].type === "image" ? (
           <motion.div
             key={`image-${currentIndex}`}
             initial={{ opacity: 0 }}
@@ -97,7 +125,7 @@ export function HeroCarousel({
       </AnimatePresence>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
 
       {/* Navigation buttons */}
       <button

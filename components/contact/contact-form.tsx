@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { contactInfo } from "@/lib/config/contact";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -43,15 +44,23 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, this would send data to your API
-    console.log(values);
-    
-    // Show success message
-    toast.success("Message sent successfully! We'll be in touch soon.");
-    
-    // Reset form
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      // In a real app, this would send data to your API
+      // For now, we'll just log it
+      console.log({
+        ...values,
+        to: contactInfo.email // Add the destination email
+      });
+      
+      // Show success message
+      toast.success("Message sent successfully! We'll be in touch soon.");
+      
+      // Reset form
+      form.reset();
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+    }
   }
 
   return (

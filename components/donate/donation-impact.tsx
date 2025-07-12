@@ -66,7 +66,7 @@ export function DonationImpact() {
         <CardContent className="p-6">
           <h3 className="font-semibold text-lg mb-2">Tax Benefits</h3>
           <p className="text-muted-foreground">
-            All donations to Trust Organization are tax-deductible to the extent allowed by law. 
+            All donations to MAA Charitable Trust are tax-deductible to the extent allowed by law. 
             Our Tax ID: 12-3456789. You will receive a receipt for your tax records.
           </p>
         </CardContent>

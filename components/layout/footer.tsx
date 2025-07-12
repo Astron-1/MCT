@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Heart, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin, FileText } from "lucide-react";
+import { contactInfo } from "@/lib/config/contact";
 
 export function Footer() {
   return (
@@ -12,34 +14,47 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Heart className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">Trust Org</span>
-            </div>
+            <Link href="/" className="block">
+              <Image
+                src="/images/logo/logo.svg"
+                alt="MAA Charitable Trust Logo"
+                width={200}
+                height={60}
+                className="dark:invert"
+              />
+            </Link>
             <p className="text-muted-foreground">
               A non-profit organization dedicated to creating positive change in communities through sustainable initiatives and empowerment programs.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook">
-                <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <Facebook className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="#" aria-label="Twitter">
-                <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <Twitter className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="#" aria-label="Instagram">
-                <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <Instagram className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="#" aria-label="LinkedIn">
-                <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-              </Link>
+            <div className="flex space-x-2">
+              {contactInfo.social.facebook && (
+                <Link href={contactInfo.social.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Facebook className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
+              {contactInfo.social.twitter && (
+                <Link href={contactInfo.social.twitter} aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Twitter className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
+              {contactInfo.social.instagram && (
+                <Link href={contactInfo.social.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Instagram className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
+              {contactInfo.social.linkedin && (
+                <Link href={contactInfo.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Linkedin className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
 
@@ -92,16 +107,22 @@ export function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">
-                  123 Community Drive, Cityville, ST 12345
+                  {contactInfo.address.fullAddress}
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground">(123) 456-7890</span>
+                <span className="text-muted-foreground">{contactInfo.phone}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground">info@trustorg.org</span>
+                <span className="text-muted-foreground">{contactInfo.email}</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <FileText className="h-5 w-5 text-primary shrink-0" />
+                <span className="text-muted-foreground">
+                  {contactInfo.registration.label}: {contactInfo.registration.ngoDarpan}
+                </span>
               </li>
             </ul>
           </div>
@@ -128,7 +149,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Trust Organization. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Maa Charitable Trust. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="hover:text-foreground transition-colors">
               Privacy Policy

@@ -1,6 +1,7 @@
 import React from "react";
-import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { contactInfo } from "@/lib/config/contact";
 
 export function ContactInfo() {
   return (
@@ -11,18 +12,22 @@ export function ContactInfo() {
           <li className="flex items-start space-x-3">
             <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
             <span className="text-muted-foreground">
-              123 Community Drive<br />
-              Cityville, ST 12345<br />
-              United States
+              {contactInfo.address.fullAddress}
             </span>
           </li>
           <li className="flex items-center space-x-3">
             <Phone className="h-5 w-5 text-primary shrink-0" />
-            <span className="text-muted-foreground">(123) 456-7890</span>
+            <span className="text-muted-foreground">{contactInfo.phone}</span>
           </li>
           <li className="flex items-center space-x-3">
             <Mail className="h-5 w-5 text-primary shrink-0" />
-            <span className="text-muted-foreground">info@trustorg.org</span>
+            <span className="text-muted-foreground">{contactInfo.email}</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <FileText className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <div className="text-muted-foreground">
+              <p>{contactInfo.registration.label}: {contactInfo.registration.ngoDarpan}</p>
+            </div>
           </li>
           <li className="flex items-start space-x-3">
             <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -38,22 +43,38 @@ export function ContactInfo() {
       <div>
         <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
         <div className="flex space-x-2">
-          <Button variant="outline" size="icon">
-            <Facebook className="h-4 w-4" />
-            <span className="sr-only">Facebook</span>
-          </Button>
-          <Button variant="outline" size="icon">
-            <Twitter className="h-4 w-4" />
-            <span className="sr-only">Twitter</span>
-          </Button>
-          <Button variant="outline" size="icon">
-            <Instagram className="h-4 w-4" />
-            <span className="sr-only">Instagram</span>
-          </Button>
-          <Button variant="outline" size="icon">
-            <Linkedin className="h-4 w-4" />
-            <span className="sr-only">LinkedIn</span>
-          </Button>
+          {contactInfo.social.facebook && (
+            <Button variant="outline" size="icon" asChild>
+              <a href={contactInfo.social.facebook} target="_blank" rel="noopener noreferrer">
+                <Facebook className="h-4 w-4" />
+                <span className="sr-only">Facebook</span>
+              </a>
+            </Button>
+          )}
+          {contactInfo.social.twitter && (
+            <Button variant="outline" size="icon" asChild>
+              <a href={contactInfo.social.twitter} target="_blank" rel="noopener noreferrer">
+                <Twitter className="h-4 w-4" />
+                <span className="sr-only">Twitter</span>
+              </a>
+            </Button>
+          )}
+          {contactInfo.social.instagram && (
+            <Button variant="outline" size="icon" asChild>
+              <a href={contactInfo.social.instagram} target="_blank" rel="noopener noreferrer">
+                <Instagram className="h-4 w-4" />
+                <span className="sr-only">Instagram</span>
+              </a>
+            </Button>
+          )}
+          {contactInfo.social.linkedin && (
+            <Button variant="outline" size="icon" asChild>
+              <a href={contactInfo.social.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </div>

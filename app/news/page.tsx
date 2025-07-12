@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { NewsCard } from "@/components/news/news-card";
 
 export const metadata: Metadata = {
-  title: "News & Publications | Trust Organization",
+  title: "News & Publications | Maa Charitable Trust",
   description: "Stay updated with our latest news, press coverage, and publications.",
 };
 

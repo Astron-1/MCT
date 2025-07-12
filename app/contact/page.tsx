@@ -5,8 +5,8 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Trust Organization",
-  description: "Get in touch with the Trust Organization. We're here to answer your questions and assist you with any inquiries.",
+  title: "Contact Us | Maa Charitable Trust",
+  description: "Get in touch with the Maa Charitable Trust. We're here to answer your questions and assist you with any inquiries.",
 };
 
 export default function ContactPage() {

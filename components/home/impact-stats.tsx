@@ -17,7 +17,7 @@ const stats = [
   {
     value: "120",
     label: "Communities Served",
-    description: "Across 15 countries worldwide",
+    description: "Across country",
     icon: Home,
   },
   {
@@ -27,9 +27,9 @@ const stats = [
     icon: School,
   },
   {
-    value: "85%",
-    label: "Funds to Programs",
-    description: "Directly supporting our initiatives",
+    value: "100%",
+    label: "Programs",
+    description: "Directly supporting our people",
     icon: Heart,
   },
 ];

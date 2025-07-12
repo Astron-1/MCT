@@ -119,7 +119,7 @@ const ImageCard = ({ image, loading, columnCount }: { image: GalleryImage; loadi
             "group-hover:scale-105",
             isLoading ? "opacity-0" : "opacity-100"
           )}
-          onLoadingComplete={() => setIsLoading(false)}
+          onLoad={() => setIsLoading(false)}
           onError={() => {
             setError(true);
             setIsLoading(false);

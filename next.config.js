@@ -11,7 +11,8 @@ const nextConfig = {
       "*.pexels.com",
       "*.unsplash.com",
       'images.unsplash.com',
-      'picsum.photos'
+      'picsum.photos',
+      'img.youtube.com'
     ],
     remotePatterns: [
       {
@@ -22,6 +23,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.pexels.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
         pathname: '**',
       }
     ],

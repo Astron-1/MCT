@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Trust Organization",
+  title: "Blog | Maa Charitable Trust",
   description: "Latest news, stories, and updates about our projects, events, and impact.",
 };
 

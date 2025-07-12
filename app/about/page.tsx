@@ -14,40 +14,51 @@ import { cn } from "@/lib/utils";
 // Key team members data (founders and executives)
 const keyTeamMembers = [
   {
-    name: "Sarah Johnson",
-    role: "Executive Director & Founder",
-    image: "https://picsum.photos/seed/sarah/1200/800",
-    bio: "Sarah brings over 15 years of experience in nonprofit leadership and a passion for community development. As our founder, she has been instrumental in shaping our organization's vision and impact. Her dedication to community service and innovative approach to solving social challenges has helped us create lasting positive change.",
+    name: "Mr. Mayank Mohan Mishra",
+    role: "Managing Director & Chairman",
+    image: "/images/team/mayank.jpg", // This will need to be added
+    bio: "Mr. Mayank Mohan Mishra is a dynamic and visionary leader with over 15 years of diverse professional experience across industries. A postgraduate in Business Administration (MBA), he has consistently demonstrated a strong commitment to excellence, ethical leadership, and community development. As the Managing Director and Chairman of MAA Charitable Trust, he plays a pivotal role in shaping the organization's vision, strategy, and social outreach programs. His leadership style is marked by empathy, accountability, and innovation, creating long-term value by aligning organizational goals with the greater good of society.",
     featured: true,
     socialLinks: {
-      twitter: "https://twitter.com/sarahjohnson",
-      linkedin: "https://linkedin.com/in/sarahjohnson",
-      email: "sarah@trustorg.com",
-      phone: "+1 (555) 123-4567",
-      blog: "/blog/team/sarah-johnson"
+      email: "maa.edu16@gmail.com",
+      phone: "+91 7068869272"
     }
   },
-  {
-    name: "Michael Chen",
-    role: "Program Director & Co-founder",
-    image: "https://picsum.photos/seed/michael/400",
-    bio: "Michael specializes in developing and implementing innovative community programs. His strategic vision has helped us reach and impact thousands of lives.",
-    socialLinks: {
-      linkedin: "https://linkedin.com/in/michaelchen",
-      email: "michael@trustorg.com",
-      phone: "+1 (555) 234-5678"
-    }
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Head of Community Relations",
-    image: "https://picsum.photos/seed/emily/400",
-    bio: "Emily is dedicated to building strong relationships with community partners and volunteers. Her work has been crucial in expanding our network.",
-    socialLinks: {
-      twitter: "https://twitter.com/emilyrodriguez",
-      email: "emily@trustorg.com"
-    }
-  }
+  // {
+  //   name: "Sarah Johnson",
+  //   role: "Executive Director & Founder",
+  //   image: "https://picsum.photos/seed/sarah/1200/800",
+  //   bio: "Sarah brings over 15 years of experience in nonprofit leadership and a passion for community development. As our founder, she has been instrumental in shaping our organization's vision and impact. Her dedication to community service and innovative approach to solving social challenges has helped us create lasting positive change.",
+  //   featured: true,
+  //   socialLinks: {
+  //     twitter: "https://twitter.com/sarahjohnson",
+  //     linkedin: "https://linkedin.com/in/sarahjohnson",
+  //     email: "sarah@trustorg.com",
+  //     phone: "+1 (555) 123-4567",
+  //     blog: "/blog/team/sarah-johnson"
+  //   }
+  // },
+  // {
+  //   name: "Michael Chen",
+  //   role: "Program Director & Co-founder",
+  //   image: "https://picsum.photos/seed/michael/400",
+  //   bio: "Michael specializes in developing and implementing innovative community programs. His strategic vision has helped us reach and impact thousands of lives.",
+  //   socialLinks: {
+  //     linkedin: "https://linkedin.com/in/michaelchen",
+  //     email: "michael@trustorg.com",
+  //     phone: "+1 (555) 234-5678"
+  //   }
+  // },
+  // {
+  //   name: "Emily Rodriguez",
+  //   role: "Head of Community Relations",
+  //   image: "https://picsum.photos/seed/emily/400",
+  //   bio: "Emily is dedicated to building strong relationships with community partners and volunteers. Her work has been crucial in expanding our network.",
+  //   socialLinks: {
+  //     twitter: "https://twitter.com/emilyrodriguez",
+  //     email: "emily@trustorg.com"
+  //   }
+  // }
 ];
 
 const impactStats = [
@@ -108,7 +119,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="container mx-auto"
             >
-              <div className="max-w-3xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl mx-auto px-6 lg:px-8">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                   Building a Better<br className="hidden sm:block" /> Future Together
                 </h1>
@@ -131,7 +142,7 @@ export default function AboutPage() {
 
       {/* Mission & Vision Section */}
       <section id="mission" className="py-16 md:py-24 bg-muted/50 scroll-mt-24 mt-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div mt-24
               initial={{ opacity: 0, x: -20 }}
@@ -231,7 +242,7 @@ export default function AboutPage() {
 
       {/* Impact Stats Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {impactStats.map((stat, index) => (
               <motion.div
@@ -255,7 +266,7 @@ export default function AboutPage() {
 
       {/* Key Team Members Section */}
       <section className="relative py-16 md:py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -298,7 +309,7 @@ export default function AboutPage() {
 
       {/* Milestones Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Journey</h2>
           <div className="max-w-5xl mx-auto">
             {milestones.map((milestone, index) => (
@@ -346,7 +357,7 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-primary/5">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Mission</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Whether you're looking to volunteer, partner, or support our cause, there are many ways to get involved and make a difference.

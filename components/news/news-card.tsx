@@ -96,7 +96,7 @@ export function NewsCard({
                         "object-cover transition-all duration-500 group-hover:scale-[1.02]",
                         imageLoading ? "opacity-0" : "opacity-100"
                       )}
-                      onLoadingComplete={() => setImageLoading(false)}
+                      onLoad={() => setImageLoading(false)}
                       onError={() => {
                         setImageError(true);
                         setImageLoading(false);
@@ -113,17 +113,19 @@ export function NewsCard({
                   <CategoryBadge />
                 </div>
                 {/* Publisher Badge */}
-                <div className="absolute bottom-4 left-4 right-4 z-10">
-                  <a
-                    href={sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-background/95 backdrop-blur-sm rounded-lg text-sm font-medium hover:bg-background/80 transition-colors duration-200"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span>{source}</span>
-                    <ExternalLink className="h-3.5 w-3.5 opacity-75" />
-                  </a>
+                <div className="absolute bottom-4 right-4 z-10">
+                  {!slug && (
+                    <a
+                      href={sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 bg-background/95 backdrop-blur-sm rounded-lg text-sm font-medium hover:bg-background/80 transition-colors duration-200"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span>{source}</span>
+                      <ExternalLink className="h-3.5 w-3.5 opacity-75" />
+                    </a>
+                  )}
                 </div>
                 {/* Subtle Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

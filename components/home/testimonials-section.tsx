@@ -17,7 +17,7 @@ import {
 // Simulated testimonials data (would come from Strapi in production)
 const testimonials = [
   {
-    quote: "The Trust Organization's clean water initiative has transformed our village. We now have reliable access to safe drinking water, which has significantly improved our health and quality of life.",
+    quote: "The Maa Charitable Trust's clean water initiative has transformed our village. We now have reliable access to safe drinking water, which has significantly improved our health and quality of life.",
     author: "Elena Sharma",
     role: "Village Community Leader",
     image: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
